@@ -12,21 +12,21 @@ class ViewController: UIViewController {
     //This class inherits from UIViewController, which handles everyting in the UI
     
     
-// setting a property for the class which sets the flipCountlabel for every instance of the property
+// setting a property for the class which sets the flipCountlabel
     var flipCount = 0 {
         didSet {
             flipCountLabel.text = "Flips: \(flipCount)"
         }
     }
     
-// This is the label connection
+// Label connection
     @IBOutlet weak var flipCountLabel: UILabel!
     
-// Creating an array of UIButton
+// Declaring an array of UIButton
     @IBOutlet var cardButtons: [UIButton]!
     var emojiChoices = ["🥙", "🍫", "🎾", "🍫 ", "🎾", "🥙"]
 
-    // All objects are connected to this method
+    //Connecting UI objects to method
     @IBAction func touchCard(_ sender: UIButton) {
      
 // Counting how many times a card has flipped
@@ -37,7 +37,7 @@ class ViewController: UIViewController {
 
     }
     
-// Here's the code for flipping cards
+//  The flipping cards method
     func flipCard(withEmoji emoji: String, on button: UIButton) {
         if button.currentTitle == emoji {
             button.setTitle(" ", for: UIControlState.normal)
