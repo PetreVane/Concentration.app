@@ -1,1 +1,1 @@
-Contains files of personal projects : iOS Apps
+Contains files of personal iOS projects
