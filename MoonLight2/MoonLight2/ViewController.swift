@@ -8,7 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    // Remember to adopt UITableViewDataSource and TableViewDelegate at the same time
+    // TableViewDelegate contains multiple methods for customising the table.
+    
     
     let morningTasks = ["Wake up early", "Brush your teeth","Make coffee"]
     let midDayTasks = ["Have lunch", "Have a coffe", "Think positively"]
@@ -38,7 +41,8 @@ class ViewController: UIViewController, UITableViewDataSource {
         // creating an instance of class "UITableViewCell"
         // Expects an index path for locating a row in tableView
         
-        let cell = UITableViewCell()
+        // Adding reusable cells
+        let cell = tableView.dequeueReusableCell(withIdentifier: "normalCell", for: indexPath)
         
         // setting the background for cells
         cell.backgroundColor = UIColor.white
@@ -46,11 +50,20 @@ class ViewController: UIViewController, UITableViewDataSource {
         // Since the table has also 3 sections, I need to declare a Switch case
         switch indexPath.section {
         case 0:
-            cell.textLabel?.text = eveningTasks[indexPath.row]
+            cell.textLabel?.text = morningTasks[indexPath.row]
+            // Adding an image to the cell, by making use of the ImageView Property
+            // you could also just type clock - the name of the selection in Assets Dir
+            cell.imageView?.image = UIImage(named: "clock")
+            
         case 1:
             cell.textLabel?.text = midDayTasks[indexPath.row]
+            // Adding an > at the end of the row
+            cell.accessoryType = .disclosureIndicator
         case 2:
-            cell.textLabel?.text = morningTasks[indexPath.row]
+            cell.textLabel?.text = eveningTasks[indexPath.row]
+            // Adding detailText label
+            cell.detailTextLabel?.text = "This is detailed text"
+            cell.detailTextLabel?.textColor = #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1)
             //cell.textLabel?.textColor = #colorLiteral(red: 1, green: 0.5781051517, blue: 0, alpha: 1)
             //cell.backgroundColor = #colorLiteral(red: 0.09019608051, green: 0, blue: 0.3019607961, alpha: 1)
         default:
@@ -65,20 +78,26 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
     
-    
+        
         switch section {
         case 0:
-            return "Evening Tasks"
+            return "Morning Tasks"
         case 1:
             return "MidDay Tasks"
         case 2:
-            return "Morning Tasks"
+            return "Evening Tasks"
         default:
             return nil
         }
     }
     
  
+    // Table View Delegate methods
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print ("You selected cell \(indexPath.row) in  section \(indexPath.section)")
+    }
+    
     
     
 
