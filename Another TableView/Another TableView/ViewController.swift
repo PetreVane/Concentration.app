@@ -10,9 +10,6 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
-    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
@@ -22,10 +19,21 @@ class ViewController: UIViewController, UITableViewDataSource {
     
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 5
     }
     
-    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch section {
+        case 0:
+            return 0
+        case 1:
+            return 1
+        case 2:
+            return 2
+        default:
+            return 10
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
