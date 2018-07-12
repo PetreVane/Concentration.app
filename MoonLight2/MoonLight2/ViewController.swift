@@ -59,6 +59,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             cell.textLabel?.text = midDayTasks[indexPath.row]
             // Adding an > at the end of the row
             cell.accessoryType = .disclosureIndicator
+            
         case 2:
             cell.textLabel?.text = eveningTasks[indexPath.row]
             // Adding detailText label
