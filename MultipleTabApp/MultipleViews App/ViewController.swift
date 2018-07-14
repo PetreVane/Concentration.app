@@ -8,8 +8,54 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource {
+    
+  // declaring a dictionary and an array
+    
+    let names = ["Peter":"student", "Jane":"teacher", "Ioana":"doctor"]
+    let dayTime = ["morning", "afternoon", "evening"]
+    
+// declaring the number of sections
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+// declaring the number of rows in each section
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        switch section {
+        case 0:
+            return names.count
+        case 1:
+            return dayTime.count
+        default:
+            return 0
+        }
+    }
+ // declaring the content of each cell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+    // creating an instance of UITableViewCell and returning it, as the func requires
+        let cell = UITableViewCell()
+        
+    // ensuring the cell content for each section
+        switch indexPath.section {
+        case 0:
+            cell.textLabel?.text = names[indexPath.row]
+        default:
+            <#code#>
+        }
+        
+        
+        return cell
+        
+    }
+    
 
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
