@@ -22,6 +22,9 @@
                                 <rect key="frame" x="0.0" y="101" width="375" height="411"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="s8j-v7-T5j"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.96678247825801" green="0.99463516278809505" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -46,7 +49,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KEb-Px-oTl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="239.19999999999999" y="139.880059970015"/>
+            <point key="canvasLocation" x="-316" y="140"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="y35-lr-BU5">
@@ -64,7 +67,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="src-Og-4ed" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1786.4000000000001" y="139.880059970015"/>
+            <point key="canvasLocation" x="-1798" y="140"/>
         </scene>
     </scenes>
 </document>

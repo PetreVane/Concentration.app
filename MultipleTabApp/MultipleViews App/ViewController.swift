@@ -12,7 +12,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     
   // declaring a dictionary and an array
     
-    let names = ["Peter":"student", "Jane":"teacher", "Ioana":"doctor"]
+    let names = ["student", "teacher", "doctor"]
     let dayTime = ["morning", "afternoon", "evening"]
     
 // declaring the number of sections
@@ -40,9 +40,11 @@ class ViewController: UIViewController, UITableViewDataSource {
     // ensuring the cell content for each section
         switch indexPath.section {
         case 0:
-            cell.textLabel?.text = names[indexPath.row]
+            cell.textLabel?.text = "Section no: \(indexPath.section); cell no: \(names[indexPath.row])"
+        case 1:
+            cell.textLabel?.text = "Section no: \(indexPath.section); cell no: \(dayTime[indexPath.row])"
         default:
-            <#code#>
+            cell.textLabel?.text = "You sould not be here"
         }
         
         
