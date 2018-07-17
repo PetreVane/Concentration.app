@@ -75,6 +75,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
     
+    numberOfComp
+    
+    
     // Adding title for each Section
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
