@@ -37,6 +37,9 @@
                                 <state key="normal" title="Roll">
                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="rollButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="18N-o1-TtX"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Dice 1" translatesAutoresizingMaskIntoConstraints="NO" id="IOv-ag-aku">
                                 <rect key="frame" x="40" y="273" width="120" height="120"/>
@@ -46,10 +49,14 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="diceImageView1" destination="IOv-ag-aku" id="Pnz-hV-9oj"/>
+                        <outlet property="diceImageView2" destination="oMR-wb-h6C" id="jpJ-su-BPy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="191" y="154"/>
+            <point key="canvasLocation" x="518" y="145"/>
         </scene>
     </scenes>
     <resources>
