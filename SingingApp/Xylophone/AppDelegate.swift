@@ -1,10 +1,9 @@
 //
-//  AppDelegate.swift
+//  ViewController.swift
 //  Xylophone
 //
-//  Created by Angela Yu on 27/01/2016.
-//  Copyright © 2016 London App Brewery. All rights reserved.
-//
+//  Created by Petre Vane on 23/07/2018.
+//  
 
 import UIKit
 
