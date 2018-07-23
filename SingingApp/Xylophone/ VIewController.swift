@@ -16,13 +16,13 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-// creating an object
+    // creating an object
     var audioPLayer: AVAudioPlayer!
     
-// getting all the sounds within an array
+    // getting all the sounds within an array
     var listOfSounds = ["note1", "note2", "note3", "note4", "note5", "note6", "note7"]
     
-// creating a placeholder for sender.tag number, which will point to an index of the listOfSounds
+    // creating a placeholder for sender.tag number, which will point to an index of the listOfSounds
    // var selectedSound: String = ""
     
     
@@ -37,10 +37,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     
     func playSound(selectedSound: String) {
         
-// creating a url to the local soundfile
+        // creating a url to the local soundfile
         let soundUrl = Bundle.main.url(forResource: selectedSound, withExtension: "wav")
         
-// attempting to play the sound
+        // attempting to play the sound
         do {
             audioPLayer = try AVAudioPlayer.init(contentsOf: soundUrl!)
             
