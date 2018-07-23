@@ -23,19 +23,19 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     var listOfSounds = ["note1", "note2", "note3", "note4", "note5", "note6", "note7"]
     
 // creating a placeholder for sender.tag number, which will point to an index of the listOfSounds
-    var selectedSound: String = ""
+   // var selectedSound: String = ""
     
     
     
     @IBAction func notePressed(_ sender: UIButton) {
+        // pointing to an index of the listOfSounds, based on each tag of the sender
+        // var selectedSound = listOfSounds[sender.tag - 1]
         
-// pointing to an index of the listOfSounds, based on each tag of the sender
-        selectedSound = listOfSounds[sender.tag - 1]
+        playSound(selectedSound: listOfSounds[sender.tag - 1])
         
-        playSound()
-            }
+    }
     
-    func playSound() {
+    func playSound(selectedSound: String) {
         
 // creating a url to the local soundfile
         let soundUrl = Bundle.main.url(forResource: selectedSound, withExtension: "wav")
