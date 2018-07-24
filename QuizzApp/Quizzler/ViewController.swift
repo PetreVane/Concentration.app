@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     let allQuestions = QuestionBank()
     // creating a placeholder for the selected answer
     var pickedAnswer: Bool = false
+    var questionNumber: Int = 0
     
     
     
@@ -45,7 +46,11 @@ class ViewController: UIViewController {
         }
         
         checkAnswer()
-  
+        // moving to the next question
+        questionNumber += 1
+        // updating the label on the move
+        questionLabel.text = allQuestions.list[questionNumber].questionText
+        
     }
     
     
@@ -55,6 +60,7 @@ class ViewController: UIViewController {
     
 
     func nextQuestion() {
+        
         
     }
     
