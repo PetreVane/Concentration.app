@@ -50,22 +50,8 @@ class ViewController: UIViewController {
         // moving to the next question
         questionNumber += 1
         // updating the label on the move and staying within the array's boundaries
-        while questionNumber <= allQuestions.list.count {
+    
             questionLabel.text = allQuestions.list[questionNumber].questionText
-        }
-        
-        
-    }
-    
-    
-    func updateUI() {
-      
-    }
-    
-
-    func nextQuestion() {
-        
-        
         }
     
     func checkAnswer() {
@@ -79,17 +65,30 @@ class ViewController: UIViewController {
             print("Wrong answer")
         }
         
+    }
+    func updateUI() {
         
+    }
+    
+    
+    func nextQuestion() {
         
         
     }
+    
+    
     
     
     func startOver() {
         
     }
+    
         
     }
+    
+    
+
+
     
     
 
