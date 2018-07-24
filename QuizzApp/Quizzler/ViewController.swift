@@ -46,10 +46,14 @@ class ViewController: UIViewController {
         }
         
         checkAnswer()
+        
         // moving to the next question
         questionNumber += 1
-        // updating the label on the move
-        questionLabel.text = allQuestions.list[questionNumber].questionText
+        // updating the label on the move and staying within the array's boundaries
+        while questionNumber <= allQuestions.list.count {
+            questionLabel.text = allQuestions.list[questionNumber].questionText
+        }
+        
         
     }
     
@@ -62,30 +66,34 @@ class ViewController: UIViewController {
     func nextQuestion() {
         
         
-    }
-    
+        }
     
     func checkAnswer() {
         // another way of tapping into the questionBank in one line of code:
         //let firstQuestion = allQuestions.list[0]
         
-        let correctAnswer = allQuestions.list[0].answer
+        let correctAnswer = allQuestions.list[questionNumber].answer
         if correctAnswer == pickedAnswer {
             print ("You've got it")
         } else {
             print("Wrong answer")
         }
         
-       
+        
         
         
     }
     
     
     func startOver() {
-       
+        
     }
+        
+    }
+    
     
 
     
-}
+
+    
+
