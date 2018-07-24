@@ -8,6 +8,8 @@
 
 import Foundation
 
+// declaring a the questions format
+
 class Question {
     
     var questionText: String
