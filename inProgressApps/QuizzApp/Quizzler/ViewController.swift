@@ -76,14 +76,19 @@ class ViewController: UIViewController {
             print("You're at question number: \(questionNumber)")
         
         } else{
-            print("You've reached the end of the line")
-            questionNumber = 0
+            let alert = UIAlertController(title: "Alert", message: "End of line dude!", preferredStyle: .alert)
+            let restartAction = UIAlertAction(title: "Restart Game", style: .default) { (<#UIAlertAction#>) in
+                self.startOver()
+            }
+            alert.addAction(restartAction)
         }
     
     
     
     
     func startOver() {
+        
+        
         
     }
     
