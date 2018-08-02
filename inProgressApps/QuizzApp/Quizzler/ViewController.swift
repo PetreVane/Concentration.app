@@ -76,7 +76,7 @@ class ViewController: UIViewController {
             print("You're at question number: \(questionNumber)")
         
         } else{
-            let alert = UIAlertController(title: "Awsome", message: "End of line dude!", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Awesome", message: "This was the last question. Would you care for one more try?", preferredStyle: .alert)
             let restartAction = UIAlertAction(title: "Restart Game", style: .default, handler: { (UIAlertAction) in
                 self.startOver()
             
@@ -92,6 +92,8 @@ class ViewController: UIViewController {
     
     func startOver() {
         
+        questionNumber = 0
+        nextQuestion()
         
         
     }
