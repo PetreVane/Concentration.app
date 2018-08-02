@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     
     //Place your instance variables here
     
-    
+    // The UI Elements from StoryBoard
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet var progressBar: UIView!
@@ -58,11 +58,10 @@ class ViewController: UIViewController {
         }
         let correctAnswer = allQuestions.list[questionNumber].answer
         if pickedAnswer == correctAnswer {
-            print("This is correct")
+            ProgressHUD.showSuccess("Correct!")
             score += 1
         } else {
-            print("Wrong answer")
-        }
+            ProgressHUD.showError("Wrong Answer!")        }
         
     }
     
