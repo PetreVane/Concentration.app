@@ -18,19 +18,17 @@ class ViewController: UIViewController {
     
    
     //Place your instance variables here
-
     let allQuestions = QuestionBank()
     var pickedAnswer: Bool = false
-    var questionNumber: Int = 0
+    var questionNumber = 0
     var score = 0
    
     
     
     override func viewDidLoad() {
-        nextQuestion()
-        
         super.viewDidLoad()
-        
+        updateUI()
+
     }
 
 
@@ -47,53 +45,49 @@ class ViewController: UIViewController {
         }
         
         checkAnswer()
-        nextQuestion()
-        
-        
+        questionNumber += 1
+        updateUI()
+
         }
-    
-    func checkAnswer() {
-        guard questionNumber <= 12 else {
-            return
-        }
-        let correctAnswer = allQuestions.list[questionNumber].answer
-        if pickedAnswer == correctAnswer {
-            ProgressHUD.showSuccess("Correct!")
-            score += 1
-        } else {
-            ProgressHUD.showError("Wrong Answer!")        }
-        
-    }
-    
     func updateUI() {
-        
-        scoreLabel.text = "Score: \(score)"
-        progressLabel.text = "\(questionNumber)/13"
+    
         progressBar.frame.size.width = (view.frame.size.width / 13) * CGFloat(questionNumber)
         // CGFloat -> Core Grafic Float number
-        
+        progressLabel.text = String(questionNumber) + "/13"
+        scoreLabel.text = "Score: \(score)"
+        nextQuestion()
+    
     }
     
-    
     func nextQuestion() {
+        
         if questionNumber <= 12 {
             questionLabel.text = allQuestions.list[questionNumber].questionText
-            questionNumber += 1
-            updateUI()
-            print("You're at question number: \(questionNumber)")
-        
-        } else{
+            
+        } else {
             let alert = UIAlertController(title: "Awesome", message: "This was the last question. Would you care for one more try?", preferredStyle: .alert)
             let restartAction = UIAlertAction(title: "Restart Game", style: .default, handler: { (UIAlertAction) in
                 self.startOver()
-            
+                
             })
-          
+            
             alert.addAction(restartAction)
             present(alert, animated: true, completion: nil)
         }
+        
+    }
     
-
+    func checkAnswer() {
+        
+        let correctAnswer = allQuestions.list[questionNumber].answer
+        
+        if correctAnswer == pickedAnswer {
+            ProgressHUD.showSuccess("Correct!")
+            score += 1
+        }
+        else {
+            ProgressHUD.showError("Wrong Answer!")
+        }
         
     }
     
@@ -101,8 +95,7 @@ class ViewController: UIViewController {
         
         questionNumber = 0
         score = 0
-        nextQuestion()
-        
+        updateUI()
         
     }
 
