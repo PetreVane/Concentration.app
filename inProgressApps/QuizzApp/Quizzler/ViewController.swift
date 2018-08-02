@@ -10,21 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    
-    let allQuestions = QuestionBank()
-    var pickedAnswer: Bool = false
-    var questionNumber: Int = 0
-    var score = 0
-    
-    
-    
-    //Place your instance variables here
-    
     // The UI Elements from StoryBoard
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet var progressBar: UIView!
     @IBOutlet weak var progressLabel: UILabel!
+    
+   
+    //Place your instance variables here
+
+    let allQuestions = QuestionBank()
+    var pickedAnswer: Bool = false
+    var questionNumber: Int = 0
+    var score = 0
+   
+    
     
     override func viewDidLoad() {
         nextQuestion()
