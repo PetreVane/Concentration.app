@@ -3,7 +3,7 @@
 //  Destini
 //
 //  Created by Philipp Muellauer on 01/09/2015.
-//  ReCreated by Petre Vane on 03/09/2018
+//  ReCreated by Petre Vane on 03/08/2018
 //  No Copyrights here
 //
 
@@ -42,15 +42,46 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        storyTextView.text = story1
+        topButton.setTitle(answer1a, for: .normal)
+        bottomButton.setTitle(answer1b, for: .normal)
         
         // TODO Step 3: Set the text for the storyTextView, topButton, bottomButton, and to T1_Story, T1_Ans1, and T1_Ans2
+        
+        
         
     }
 
     
     // User presses one of the buttons
     @IBAction func buttonPressed(_ sender: UIButton) {
+        
+        if sender.tag == 1 {
+            storyTextView.text = story3
+            topButton.setTitle(answer3a, for: .normal)
+            bottomButton.setTitle(answer3b, for: .normal)
+            
+            if sender.tag == 1 {
+                storyTextView.text = story6
+                
+            } else if sender.tag == 2 {
+                storyTextView.text = story5
+                
+            }
+            
+        } else if sender.tag == 2 {
+            storyTextView.text = story2
+            topButton.setTitle(answer2a, for: .normal)
+            bottomButton.setTitle(answer2b, for: .normal)
+            
+            if sender.tag == 1 {
+                storyTextView.text = story3
+                
+            } else if sender.tag == 2 {
+                storyTextView.text = story4
+                
+            }
+        }
     
         // TODO Step 4: Write an IF-Statement to update the views
                 
@@ -59,7 +90,7 @@ class ViewController: UIViewController {
     
     }
     
-
+    
 
 
 }
