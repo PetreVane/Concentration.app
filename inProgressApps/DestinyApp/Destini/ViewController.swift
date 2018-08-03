@@ -57,7 +57,7 @@ class ViewController: UIViewController {
     // User presses one of the buttons
     @IBAction func buttonPressed(_ sender: UIButton) {
         
-        if storyIndex  == 1 && sender.tag == 1 {
+        if (storyIndex == 1 || storyIndex == 2) && sender.tag == 1 {
             storyTextView.text = story3
             topButton.setTitle(answer3a, for: .normal)
             bottomButton.setTitle(answer3b, for: .normal)
@@ -68,12 +68,6 @@ class ViewController: UIViewController {
             topButton.setTitle(answer2a, for: .normal)
             bottomButton.setTitle(answer2b, for: .normal)
             storyIndex = 2
-            
-        } else if storyIndex == 2 && sender.tag == 1 {
-                storyTextView.text = story3
-                topButton.setTitle(answer3a, for: .normal)
-                bottomButton.setTitle(answer3b, for: .normal)
-                storyIndex = 3
     
         } else if storyIndex == 2 && sender.tag == 2 {
                 storyTextView.text = story4
