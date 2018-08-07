@@ -7,18 +7,19 @@
 //  Copyright (c) 2018 OrbSec. All rights reserved.
 
 import UIKit
+import CoreLocation
 
-
-class WeatherViewController: UIViewController {
+class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     
     //Constants
     let WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather"
-    let APP_ID = "e72ca729af228beabd5d20e3b7749713"
+    let APP_ID = "53d4547cd3b9977670e131977f1afba2"
     
 
     //TODO: Declare instance variables here
+    let locationManager = CLLocationManager()
     
-
+    
     
     //Pre-linked IBOutlets
     @IBOutlet weak var weatherIcon: UIImageView!
@@ -28,6 +29,9 @@ class WeatherViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        locationManager.requestWhenInUseAuthorization()
         
         
         //TODO:Set up the location manager here.
@@ -94,6 +98,9 @@ class WeatherViewController: UIViewController {
     
     //Write the PrepareForSegue Method here
     
+    
+    // MARK: - Add extra functionalities
+    /***************************************************************/
     
     
     
