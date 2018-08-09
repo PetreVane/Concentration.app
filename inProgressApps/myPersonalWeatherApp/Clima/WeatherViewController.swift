@@ -33,9 +33,13 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         // determines the accuracy of your location
         locationManager.requestWhenInUseAuthorization()
-        // asks for tracking location 
-        
-        
+        // asks for tracking location
+        locationManager.startUpdatingLocation()
+
+        /*
+         Starts updating user location in the background. Once the location has been found, it will send a message to the ViewController (the delegate).
+         In order to receive the location, you have to update the method 'didUpdateLocation()' bellow.
+        */
         //TODO:Set up the location manager here.
     
         
@@ -71,10 +75,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     
     //Write the updateUIWithWeatherData method here:
     
-    
-    
-    
-    
+   
     
     //MARK: - Location Manager Delegate Methods
     /***************************************************************/
@@ -82,12 +83,34 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     
     //Write the didUpdateLocations method here:
     
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let myLocation = locations[locations.count - 1]
+        if myLocation.horizontalAccuracy > 0 {
+            locationManager.stopUpdatingLocation()
+// print("Longitude: \(myLocation.coordinate.longitude) and Latitude: \(myLocation.coordinate.latitude)")
+            let longitude = String(myLocation.coordinate.longitude)
+            let latitude = String(myLocation.coordinate.latitude)
+            
+            var parameters: [String: String] = ["lat": latitude, "lon": longitude, "appid": APP_ID]
+            
+            
+            
+        }
+        
+    }
+    // This is the method that gets activated, once the LocationManager has a location.
+    // Tells the delegate ( WeatherViewController) that the LocationManager has a location.
+    
+    
     
     
     //Write the didFailWithError method here:
     
-    
-    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+        cityLabel.text = "Location unavailable"
+    }
+     // this gets executed when the LocationManager fails in getting a location
 
     
     //MARK: - Change City Delegate methods
