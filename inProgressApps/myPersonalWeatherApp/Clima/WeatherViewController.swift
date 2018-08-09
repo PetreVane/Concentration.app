@@ -8,6 +8,9 @@
 
 import UIKit
 import CoreLocation
+import Alamofire
+import SwiftyJSON
+
 
 class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     
@@ -53,7 +56,27 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     
     //Write the getWeatherData method here:
     
-
+    func  getWeatherData(url: String, params: [String: String]) {
+        
+        Alamofire.request(url, method:.get, parameters: params).responseJSON {
+            response in
+            if response.result.isSuccess {
+                print("Succcess, you've got the weather Data")
+                
+                let weatherJSON: JSON = JSON(response.result.value!)
+                // getting the value of the response
+                // casting the value in JSON -> this comes from SwiftyJSON, not from Swift
+                //print(weatherJSON)
+                self.updateWeatherData(json: weatherJSON)
+                
+                
+            } else {
+                print("Error: \(response.result.error)")
+                self.cityLabel.text = "Connection issues"
+            }
+        }
+        
+    }
     
     
     
@@ -64,7 +87,13 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
    
     
     //Write the updateWeatherData method here:
-    
+    func updateWeatherData(json: JSON) {
+        
+        // you're interested in getting the temperature, so declare a placeholder
+        let tempResults = json["main"]["temp"]
+        // this is how to navigate within the JSON formatted data, thanks to SwiftyJSON
+        
+    }
 
     
     
@@ -85,15 +114,21 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let myLocation = locations[locations.count - 1]
+        // getting the most accurate location, of all attempts stored in [CLLocation] array
         if myLocation.horizontalAccuracy > 0 {
             locationManager.stopUpdatingLocation()
+            
+            locationManager.delegate = nil
+            // while in the process of stoping the locationManager, you might get some extra JSON responses.
+            // To avoid that, set the locationManager.delegate to nil.
+            
 // print("Longitude: \(myLocation.coordinate.longitude) and Latitude: \(myLocation.coordinate.latitude)")
             let longitude = String(myLocation.coordinate.longitude)
             let latitude = String(myLocation.coordinate.latitude)
             
             var parameters: [String: String] = ["lat": latitude, "lon": longitude, "appid": APP_ID]
             
-            
+            getWeatherData(url: WEATHER_URL, params: parameters)
             
         }
         
