@@ -30,8 +30,10 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters // determines the accuracy of your location
-        locationManager.requestWhenInUseAuthorization() // asks for tracking location 
+        locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
+        // determines the accuracy of your location
+        locationManager.requestWhenInUseAuthorization()
+        // asks for tracking location 
         
         
         //TODO:Set up the location manager here.
