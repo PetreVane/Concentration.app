@@ -21,6 +21,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
 
     //TODO: Declare instance variables here
     let locationManager = CLLocationManager()
+    let weatherDataModel = WeatherDataModel() // object of Weather Data class
     
     
     
@@ -71,7 +72,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
                 
                 
             } else {
-                print("Error: \(response.result.error)")
+                print("Error: \(String(describing: response.result.error))")
                 self.cityLabel.text = "Connection issues"
             }
         }
@@ -89,9 +90,16 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     //Write the updateWeatherData method here:
     func updateWeatherData(json: JSON) {
         
-        // you're interested in getting the temperature, so declare a placeholder
-        let tempResults = json["main"]["temp"]
+        // you're want to get the temperature, so declare a placeholder
         // this is how to navigate within the JSON formatted data, thanks to SwiftyJSON
+        if let tempResults = json["main"]["temp"].double { // converts JSON into double
+            weatherDataModel.temperature = Int(tempResults - 273.15)
+            // convers double to Int, while transforming kelvin to Celsius
+            
+            weatherDataModel.city = json["name"].stringValue
+            weatherDataModel.condition = json["weather"][0]["id"].intValue
+            weatherDataModel.weatherIcon = weatherDataModel.updateWeatherIcon(conditionCode: weatherDataModel.condition)
+        }
         
     }
 
@@ -126,7 +134,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
             let longitude = String(myLocation.coordinate.longitude)
             let latitude = String(myLocation.coordinate.latitude)
             
-            var parameters: [String: String] = ["lat": latitude, "lon": longitude, "appid": APP_ID]
+            let parameters: [String: String] = ["lat": latitude, "lon": longitude, "appid": APP_ID]
             
             getWeatherData(url: WEATHER_URL, params: parameters)
             
