@@ -12,6 +12,7 @@
 		0B1B34312121E023005EE8DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B1B342F2121E023005EE8DB /* Main.storyboard */; };
 		0B1B34332121E025005EE8DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B1B34322121E025005EE8DB /* Assets.xcassets */; };
 		0B1B34362121E025005EE8DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B1B34342121E025005EE8DB /* LaunchScreen.storyboard */; };
+		0B1B34402121E23A005EE8DB /* Second ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1B343F2121E23A005EE8DB /* Second ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		0B1B34322121E025005EE8DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B1B34352121E025005EE8DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0B1B34372121E025005EE8DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0B1B343F2121E23A005EE8DB /* Second ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Second ViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				0B1B342B2121E023005EE8DB /* AppDelegate.swift */,
 				0B1B342D2121E023005EE8DB /* ViewController.swift */,
+				0B1B343F2121E23A005EE8DB /* Second ViewController.swift */,
 				0B1B342F2121E023005EE8DB /* Main.storyboard */,
 				0B1B34322121E025005EE8DB /* Assets.xcassets */,
 				0B1B34342121E025005EE8DB /* LaunchScreen.storyboard */,
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B1B342E2121E023005EE8DB /* ViewController.swift in Sources */,
+				0B1B34402121E23A005EE8DB /* Second ViewController.swift in Sources */,
 				0B1B342C2121E023005EE8DB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
