@@ -1,7 +1,6 @@
 //
 //  WeatherDataModel.swift
 //  WeatherApp
-//  Created by Angela Yu on 23/08/2015.
 //  ReCreated by Petre Vane on 4/08/2018.
 //  Copyright (c) 2018 OrbSec. All rights reserved.
 //
