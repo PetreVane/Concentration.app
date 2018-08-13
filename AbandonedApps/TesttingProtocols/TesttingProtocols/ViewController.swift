@@ -8,7 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CanReceive {
+    
+
+    
+    var dataPassedBack = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,5 +25,39 @@ class ViewController: UIViewController {
     }
 
 
+    @IBOutlet weak var firstLabel: UILabel!
+    
+    @IBOutlet weak var firstTextField: UITextField!
+    
+    @IBAction func firstButtonPressed(_ sender: UIButton) {
+        // once you've declared a segue, which passes data between view controllers, you just have to call the segue
+        
+        performSegue(withIdentifier: "sendDataForward", sender: self)
+        
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "sendDataForward" {
+            
+            // set the destination of your segue
+            let secondVC = segue.destination as! SecondViewController
+            // send the text to secondVC
+            secondVC.data = firstTextField.text!
+            secondVC.delegate = self
+            
+            
+        }
+    }
+    
+    func dataPassed(data: String) {
+        
+        //firstTextField.text = data
+        firstLabel.text = data
+    }
+    
+    
+    
+    
 }
 

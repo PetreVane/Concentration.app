@@ -8,10 +8,21 @@
 
 import UIKit
 
-class Second_ViewController: UIViewController {
+protocol CanReceive {
+    
+    func dataPassed(data: String)
+    
+}
+
+class SecondViewController: UIViewController {
+    
+    
+    var delegate: CanReceive?
+    var data: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        secondLabel.text = data
 
         // Do any additional setup after loading the view.
     }
@@ -21,7 +32,18 @@ class Second_ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
+    @IBOutlet weak var secondLabel: UILabel!
+    
+    @IBOutlet weak var secondTextField: UITextField!
+    
+    @IBAction func secondButtonPressed(_ sender: UIButton) {
+        delegate?.dataPassed(data: secondTextField.text!)
+        dismiss(animated: true, completion: nil)
+        
+    }
+    
+    
     /*
     // MARK: - Navigation
 

@@ -41,20 +41,28 @@
                                 <state key="normal" title="push me to second screen">
                                     <color key="titleColor" red="0.99434061684789832" green="1" blue="0.98146351130693055" alpha="0.93086258561643831" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="firstButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NBc-RB-gCE"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.36320370102063082" blue="0.30718387385448287" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="firstLabel" destination="6CO-QH-4ri" id="tSo-d4-URO"/>
+                        <outlet property="firstTextField" destination="nGR-u7-B16" id="SWI-Ta-5vn"/>
+                        <segue destination="9bW-Mz-gnJ" kind="show" identifier="sendDataForward" id="qit-Qy-Xut"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="85.599999999999994" y="77.811094452773617"/>
+            <point key="canvasLocation" x="-585" y="91"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="wKu-Ph-tb7">
             <objects>
-                <viewController id="9bW-Mz-gnJ" customClass="Second_ViewController" customModule="TesttingProtocols" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="9bW-Mz-gnJ" customClass="SecondViewController" customModule="TesttingProtocols" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="d4H-Cw-6Ud">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -82,15 +90,22 @@
                                 <state key="normal" title="push me to first screen">
                                     <color key="titleColor" red="0.99434061679999997" green="1" blue="0.98146351129999998" alpha="0.93086258560000001" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="secondButtonPressed:" destination="9bW-Mz-gnJ" eventType="touchUpInside" id="ZsC-dh-Tpx"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.44409661304957226" green="0.45096871813635175" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="mIh-5i-tFN"/>
                     </view>
+                    <connections>
+                        <outlet property="secondLabel" destination="kYk-vy-p26" id="CVU-Fi-6dF"/>
+                        <outlet property="secondTextField" destination="24y-uy-wVc" id="82R-ws-gDI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rWV-3w-Sb6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="780" y="77.811094452773617"/>
+            <point key="canvasLocation" x="111" y="91"/>
         </scene>
     </scenes>
 </document>
