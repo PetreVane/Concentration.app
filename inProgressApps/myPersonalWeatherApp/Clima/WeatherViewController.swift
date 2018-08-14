@@ -11,7 +11,9 @@ import Alamofire
 import SwiftyJSON
 
 
-class WeatherViewController: UIViewController, CLLocationManagerDelegate {
+class WeatherViewController: UIViewController, CLLocationManagerDelegate, ChangeCityDelegate {
+ 
+    
     
     //Constants
     let WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather"
@@ -45,7 +47,6 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
         */
         //TODO:Set up the location manager here.
     
-        
         
     }
     
@@ -117,7 +118,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     func updateUIWithWeatherData(){
         
         cityLabel.text = weatherDataModel.city
-        temperatureLabel.text = String(weatherDataModel.temperature)
+        temperatureLabel.text = "\(weatherDataModel.temperature)°"
         weatherIcon.image = UIImage(named: weatherDataModel.weatherIcon)
     }
    
@@ -166,14 +167,30 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate {
     
     //MARK: - Change City Delegate methods
     /***************************************************************/
-    
+    func userEnterNewCityName(city: String) {
+        cityLabel.text = city
+    }
     
     //Write the userEnteredANewCityName Delegate method here:
-    
+    func userEnteredANewCityName (city: String) {
+        
+        let params: [String: String] = ["q":city, "appid":APP_ID]
+        getWeatherData(url: WEATHER_URL, params: params)
+        updateUIWithWeatherData()
+        
+        
+    }
 
     
     //Write the PrepareForSegue Method here
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "changeCityName" {
+            
+            let secondViewController = segue.destination as! ChangeCityViewController
+            secondViewController.delegate = self
+            
+        }
+    }
     
     // MARK: - Add extra functionalities
     /***************************************************************/
