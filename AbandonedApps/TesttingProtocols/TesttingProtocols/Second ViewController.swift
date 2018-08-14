@@ -38,6 +38,7 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var secondTextField: UITextField!
     
     @IBAction func secondButtonPressed(_ sender: UIButton) {
+        // Delegator (data Pusher of Second View Controller)
         delegate?.dataPassed(data: secondTextField.text!)
         dismiss(animated: true, completion: nil)
         

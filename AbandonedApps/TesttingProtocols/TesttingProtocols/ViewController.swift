@@ -44,6 +44,7 @@ class ViewController: UIViewController, CanReceive {
             let secondVC = segue.destination as! SecondViewController
             // send the text to secondVC
             secondVC.data = firstTextField.text!
+           // Delegate for data pushed from Second View Controller
             secondVC.delegate = self
             
             
