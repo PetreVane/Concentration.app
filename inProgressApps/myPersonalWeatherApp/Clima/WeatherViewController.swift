@@ -80,9 +80,6 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, Change
     }
     
     
-    
-    
-    
     //MARK: - JSON Parsing
     /***************************************************************/
    
@@ -90,7 +87,7 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, Change
     //Write the updateWeatherData method here:
     func updateWeatherData(json: JSON) {
         
-        // you're want to get the temperature, so declare a placeholder
+        // you'll want to get the temperature, so declare a placeholder
         // this is how to navigate within the JSON formatted data, thanks to SwiftyJSON
         if let tempResults = json["main"]["temp"].double { // converts JSON into double
             weatherDataModel.temperature = Int(tempResults - 273.15)
@@ -167,14 +164,14 @@ class WeatherViewController: UIViewController, CLLocationManagerDelegate, Change
     
     //MARK: - Change City Delegate methods
     /***************************************************************/
-    func userEnterNewCityName(city: String) {
-        cityLabel.text = city
-    }
+//    func userEnterNewCityName(city: String) {
+//        cityLabel.text = city
+//    }
     
     //Write the userEnteredANewCityName Delegate method here:
-    func userEnteredANewCityName (city: String) {
+    func userEnterNewCityName(city: String) {
         
-        let params: [String: String] = ["q":city, "appid":APP_ID]
+        let params: [String: String] = ["q" : city, "appid" : APP_ID]
         getWeatherData(url: WEATHER_URL, params: params)
         updateUIWithWeatherData()
         
