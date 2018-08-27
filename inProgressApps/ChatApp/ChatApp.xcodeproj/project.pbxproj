@@ -8,18 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		0B3CE62021319C700051D65A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3CE61F21319C700051D65A /* AppDelegate.swift */; };
-		0B3CE62221319C700051D65A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3CE62121319C700051D65A /* ViewController.swift */; };
 		0B3CE62521319C700051D65A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B3CE62321319C700051D65A /* Main.storyboard */; };
 		0B3CE62721319C710051D65A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0B3CE62621319C710051D65A /* Assets.xcassets */; };
 		0B3CE62A21319C710051D65A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B3CE62821319C710051D65A /* LaunchScreen.storyboard */; };
 		0B515E3D2131A6420091E705 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B515E3C2131A6420091E705 /* SWRevealViewController.m */; };
+		0B5D54A1213401A50018CB4A /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D54A0213401A50018CB4A /* ChatVC.swift */; };
+		0B5D54A3213401C50018CB4A /* ChannelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5D54A2213401C50018CB4A /* ChannelVC.swift */; };
 		22095D9D2DF1FFC6046A5293 /* Pods_ChatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B98C6EFDCFECF66432B76E61 /* Pods_ChatApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0B3CE61C21319C700051D65A /* ChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B3CE61F21319C700051D65A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0B3CE62121319C700051D65A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0B3CE62421319C700051D65A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0B3CE62621319C710051D65A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0B3CE62921319C710051D65A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -27,6 +27,8 @@
 		0B515E3B2131A6420091E705 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = "../../../../SWRevealViewController-master/SWRevealViewController/SWRevealViewController.h"; sourceTree = "<group>"; };
 		0B515E3C2131A6420091E705 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = "../../../../SWRevealViewController-master/SWRevealViewController/SWRevealViewController.m"; sourceTree = "<group>"; };
 		0B515E3F2131A6E40091E705 /* ChatApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ChatApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		0B5D54A0213401A50018CB4A /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
+		0B5D54A2213401C50018CB4A /* ChannelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelVC.swift; sourceTree = "<group>"; };
 		78E59DBE9FD9AF839202A5D9 /* Pods-ChatApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChatApp/Pods-ChatApp.debug.xcconfig"; sourceTree = "<group>"; };
 		B98C6EFDCFECF66432B76E61 /* Pods_ChatApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D70E227512D7018DA3AA056B /* Pods-ChatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChatApp/Pods-ChatApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -66,8 +68,10 @@
 		0B3CE61E21319C700051D65A /* ChatApp */ = {
 			isa = PBXGroup;
 			children = (
+				0B5D549F213401700018CB4A /* Model */,
+				0B5D549E213401630018CB4A /* View */,
+				0B5D549D2134015B0018CB4A /* Controller */,
 				0B3CE61F21319C700051D65A /* AppDelegate.swift */,
-				0B3CE62121319C700051D65A /* ViewController.swift */,
 				0B3CE62321319C700051D65A /* Main.storyboard */,
 				0B3CE62621319C710051D65A /* Assets.xcassets */,
 				0B3CE62821319C710051D65A /* LaunchScreen.storyboard */,
@@ -84,6 +88,29 @@
 				0B515E3F2131A6E40091E705 /* ChatApp-Bridging-Header.h */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0B5D549D2134015B0018CB4A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0B5D54A0213401A50018CB4A /* ChatVC.swift */,
+				0B5D54A2213401C50018CB4A /* ChannelVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0B5D549E213401630018CB4A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0B5D549F213401700018CB4A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		3F620B874DA58A1694F88432 /* Frameworks */ = {
@@ -222,7 +249,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B3CE62221319C700051D65A /* ViewController.swift in Sources */,
+				0B5D54A3213401C50018CB4A /* ChannelVC.swift in Sources */,
+				0B5D54A1213401A50018CB4A /* ChatVC.swift in Sources */,
 				0B3CE62021319C700051D65A /* AppDelegate.swift in Sources */,
 				0B515E3D2131A6420091E705 /* SWRevealViewController.m in Sources */,
 			);
