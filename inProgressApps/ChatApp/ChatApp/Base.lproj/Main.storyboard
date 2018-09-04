@@ -22,14 +22,14 @@
                     </view>
                     <connections>
                         <segue destination="lZV-sr-N69" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="lmq-tt-WTk"/>
-                        <segue destination="LYX-5K-rQL" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="6ML-WK-dKa"/>
+                        <segue destination="HkL-dI-uMg" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="TuK-Vq-5it"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-104" y="51"/>
         </scene>
-        <!--Item-->
+        <!--Shout-->
         <scene sceneID="Vkh-6Y-B3k">
             <objects>
                 <viewController id="HkL-dI-uMg" customClass="ChatVC" customModule="ChatApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -51,15 +51,22 @@
                                         </state>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.15686274509803921" green="0.16078431372549018" blue="0.16078431372549018" alpha="0.82780393835616439" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="NUc-1R-dJT" secondAttribute="bottom" constant="12" id="6Jx-1q-zN9"/>
                                     <constraint firstAttribute="height" constant="77" id="92D-nm-guV"/>
                                     <constraint firstItem="NUc-1R-dJT" firstAttribute="leading" secondItem="wnR-y3-Mgp" secondAttribute="leading" constant="12" id="eH6-AR-pty"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4d-Ar-3aW">
+                                <rect key="frame" x="170" y="677" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.15686274509803921" green="0.16078431372549018" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.0047728799641684194" green="0.0049175126903553412" blue="0.0049175126903553412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wnR-y3-Mgp" firstAttribute="top" secondItem="Goh-0S-sIa" secondAttribute="top" id="Srs-vL-tn7"/>
                             <constraint firstItem="wnR-y3-Mgp" firstAttribute="trailing" secondItem="Goh-0S-sIa" secondAttribute="trailing" id="UrN-tT-20W"/>
@@ -67,22 +74,33 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Goh-0S-sIa"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="bKO-Pw-pE3"/>
+                    <tabBarItem key="tabBarItem" title="Shout" image="shout_icon" id="bKO-Pw-pE3">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="15"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="menuButton" destination="NUc-1R-dJT" id="TFH-D5-dqn"/>
+                        <segue destination="YHv-1Q-FIX" kind="show" id="r40-nt-MsC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1LM-pA-Y7H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1908" y="629.55665024630548"/>
+            <point key="canvasLocation" x="988.40579710144937" y="489.13043478260875"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="dAU-8C-rCi">
+        <scene sceneID="0xr-I6-YxV">
             <objects>
-                <viewController id="Lxi-eg-0yn" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vuF-2g-KgX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="YHv-1Q-FIX" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="96t-8f-sbg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="jsE-zw-2WZ"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="recents" id="6d1-5K-rSj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uqB-38-X2h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1908" y="1401"/>
+            <point key="canvasLocation" x="2204" y="490"/>
         </scene>
         <!--ChannelVC-->
         <scene sceneID="GS8-pC-2sy">
@@ -139,24 +157,11 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="NDc-qh-osd">
-                                <rect key="frame" x="91.666666666666686" y="57" width="192" height="192"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ppi-Fp-XfV">
-                                        <rect key="frame" x="0.0" y="0.0" width="192" height="192"/>
-                                        <state key="normal" image="profileDefault">
-                                            <color key="titleColor" red="0.41025917340000001" green="0.76540688450000005" blue="0.49217750830000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.24961392393251716" green="0.25717798223350252" blue="0.25717798223350252" alpha="0.72214790239726023" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="NDc-qh-osd" firstAttribute="top" secondItem="AYa-TN-lHV" secondAttribute="top" constant="13" id="8aP-cZ-vIq"/>
-                            <constraint firstItem="NDc-qh-osd" firstAttribute="centerX" secondItem="0Y7-a9-SJR" secondAttribute="centerX" id="JP1-0h-Jj8"/>
-                            <constraint firstItem="xPy-b8-jt6" firstAttribute="leading" secondItem="AYa-TN-lHV" secondAttribute="leading" constant="37" id="VEK-tg-d7b"/>
-                            <constraint firstItem="xPy-b8-jt6" firstAttribute="top" secondItem="NDc-qh-osd" secondAttribute="bottom" constant="92" id="ncm-co-L2f"/>
+                            <constraint firstItem="xPy-b8-jt6" firstAttribute="leading" secondItem="AYa-TN-lHV" secondAttribute="leading" constant="37" id="7e8-bP-wp0"/>
+                            <constraint firstItem="AYa-TN-lHV" firstAttribute="bottom" secondItem="xPy-b8-jt6" secondAttribute="bottom" constant="55" id="8lv-yQ-qJr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AYa-TN-lHV"/>
                     </view>
@@ -165,26 +170,9 @@
             </objects>
             <point key="canvasLocation" x="956" y="-329.55665024630542"/>
         </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="Wgl-qj-OVm">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="LYX-5K-rQL" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fL1-gA-LvE">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="HkL-dI-uMg" kind="relationship" relationship="viewControllers" id="MWJ-S2-EvB"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LdE-Jj-mf1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="965.60000000000002" y="629.55665024630548"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="profileDefault" width="192" height="192"/>
+        <image name="shout_icon" width="56" height="56"/>
         <image name="smackBurger" width="40" height="40"/>
     </resources>
 </document>
