@@ -28,7 +28,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     }
     
     
-    let baseURL = "https://apiv2.bitcoinaverage.com/indices/global/ticker/BTC"
+    let baseURL = "https://apiv2.bitcoinaverage.com/indices/global/ticker/BTCUSD"
+    
     
     let currencyArray = ["AUD", "BRL","CAD","CNY","EUR","GBP","HKD","IDR","ILS","INR","JPY","MXN","NOK","NZD","PLN","RON","RUB","SEK","SGD","USD","ZAR"]
     var finalURL = ""
@@ -67,7 +68,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 //    
     func getCurrencyPrice(url: String) {
 
-        Alamofire.request(finalURL, method:.get)
+        Alamofire.request(baseURL, method:.get)
             .responseJSON { response in
                 if response.result.isSuccess {
 
@@ -82,7 +83,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
                     self.bitcoinPriceLabel.text = "Connection Issues"
                 }
             }
-
+        
     }
 
 //
