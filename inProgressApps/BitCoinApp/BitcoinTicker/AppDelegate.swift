@@ -1,7 +1,7 @@
 //
 //  AppDelegate.swift
 //  BitcoinTicker
-//
+//  Author Petre Vane on September 5, 2018
 //
 
 import UIKit
