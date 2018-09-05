@@ -18,6 +18,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     let currencyArray = ["AUD", "BRL","CAD","CNY","EUR","GBP","HKD","IDR","ILS","INR","JPY","MXN","NOK","NZD","PLN","RON","RUB","SEK","SGD","USD","ZAR"]
     let currencySymbol = ["$", "R$", "$", "¥", "€", "£", "$", "Rp", "₪", "₹", "¥", "$", "kr", "$", "zł", "RON", "₽", "kr", "$", "$", "R"]
     var finalURL = ""
+    var currencySelected = ""
     
 
     //Pre-setup IBOutlets
@@ -57,7 +58,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
         //print(currencyArray[row])
         finalURL = baseURL + currencyArray[row]
-        bitcoinPriceLabel.text? = currencySymbol[row]
+        currencySelected = currencySymbol[row]
         //print(finalURL)
         getBitCoinData(url: finalURL)
         
@@ -95,7 +96,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         
         if let bitCoinDataResult = json["ask"].double {
             
-            bitcoinPriceLabel.text?.append(contentsOf: String(bitCoinDataResult))
+            bitcoinPriceLabel.text = "\(currencySelected) " + String(bitCoinDataResult)
             
         } else {
             
