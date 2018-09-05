@@ -22,8 +22,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     // what should each element of the picker contain
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        var selectedCurrency = currencyArray[row]
-        return selectedCurrency
+        //var selectedCurrency = currencyArray[row]
+        return currencyArray[row]
         
     }
     
@@ -76,7 +76,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
                     let priceJSON : JSON = JSON(response.result.value!)
                     print (priceJSON)
 
-                    //self.getCurrencyPrice(json: priceJSON)
+                    self.updateBitCoinPrice(json: priceJSON)
 
                 } else {
                     print("Error: \(String(describing: response.result.error))")
@@ -107,6 +107,19 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 //    }
 //    
 
+    func updateBitCoinPrice (json: JSON) {
+        
+        if let bitcoinPriceResults = json["main"]["changes"]["price"].double {
+            
+            bitcoinPriceLabel.text = String(bitcoinPriceResults)
+         
+            
+        } else {
+            bitcoinPriceLabel.text = "cannot get data"
+        }
+        
+        
+    }
 
 
 
