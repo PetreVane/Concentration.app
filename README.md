@@ -1,1 +1,1 @@
-Contains files of personal iOS projects
+Contains iOS projects used when learning iOS Development
